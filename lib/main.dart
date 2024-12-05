@@ -4,6 +4,8 @@ import 'package:lottie/lottie.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/services.dart';
+import 'project_page.dart';
+
 
 void main() {
   runApp(const MyApp());
@@ -106,6 +108,19 @@ class HomeScreen extends StatelessWidget {
                 Navigator.pop(context);
               },
             ),
+                  ListTile(
+        leading: const Icon(Icons.folder),
+        title: const Text('My Project'),
+        onTap: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) =>  ProjectPage(),
+            ),
+          );
+        },
+      ),
+      const Divider(),
             ListTile(
               leading: const Icon(Icons.chat),
               title: const Text('WhatsApp'),
